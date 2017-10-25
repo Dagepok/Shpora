@@ -1,0 +1,15 @@
+C:\Users\Админ\Desktop\Шпора\testing\Samples\bin\Debug\data.txt
+C:\Users\Админ\Desktop\Шпора\testing\Samples\bin\Debug\Samples.dll
+C:\Users\Админ\Desktop\Шпора\testing\Samples\bin\Debug\Samples.pdb
+C:\Users\Админ\Desktop\Шпора\testing\Samples\bin\Debug\FluentAssertions.Core.dll
+C:\Users\Админ\Desktop\Шпора\testing\Samples\bin\Debug\FluentAssertions.dll
+C:\Users\Админ\Desktop\Шпора\testing\Samples\bin\Debug\nunit.framework.dll
+C:\Users\Админ\Desktop\Шпора\testing\Samples\bin\Debug\FluentAssertions.pdb
+C:\Users\Админ\Desktop\Шпора\testing\Samples\bin\Debug\FluentAssertions.xml
+C:\Users\Админ\Desktop\Шпора\testing\Samples\bin\Debug\FluentAssertions.Core.pdb
+C:\Users\Админ\Desktop\Шпора\testing\Samples\bin\Debug\FluentAssertions.Core.xml
+C:\Users\Админ\Desktop\Шпора\testing\Samples\bin\Debug\nunit.framework.xml
+C:\Users\Админ\Desktop\Шпора\testing\Samples\obj\Debug\Samples.csprojResolveAssemblyReference.cache
+C:\Users\Админ\Desktop\Шпора\testing\Samples\obj\Debug\Samples.csproj.CoreCompileInputs.cache
+C:\Users\Админ\Desktop\Шпора\testing\Samples\obj\Debug\Samples.dll
+C:\Users\Админ\Desktop\Шпора\testing\Samples\obj\Debug\Samples.pdb
