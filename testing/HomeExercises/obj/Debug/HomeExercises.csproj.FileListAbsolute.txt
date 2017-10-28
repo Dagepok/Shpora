@@ -4,13 +4,11 @@ C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\bin\Debug\ObjectCom
 C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\bin\Debug\ObjectComparison.pdb
 C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\bin\Debug\FluentAssertions.Core.dll
 C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\bin\Debug\FluentAssertions.dll
-C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\bin\Debug\JetBrains.Annotations.dll
 C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\bin\Debug\nunit.framework.dll
 C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\bin\Debug\FluentAssertions.pdb
 C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\bin\Debug\FluentAssertions.xml
 C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\bin\Debug\FluentAssertions.Core.pdb
 C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\bin\Debug\FluentAssertions.Core.xml
-C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\bin\Debug\JetBrains.Annotations.xml
 C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\bin\Debug\nunit.framework.xml
 C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\obj\Debug\ObjectComparison.dll
 C:\Users\Админ\Desktop\Шпора\testing\HomeExercises\obj\Debug\ObjectComparison.pdb

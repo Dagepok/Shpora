@@ -8,39 +8,65 @@ namespace HomeExercises
     public class NumberValidatorTests
     {
         [Test]
-        [TestCase(1, 0, true)]
-        public void NumberValitdatorConstructor_DoesNotThrowsException_WhenPositiveArgs(int precision, int scale, bool onlyPositive)
+        public void NumberValitdatorConstructor_DoesNotThrowsException_WhenPositiveArgs()
         {
-            Assert.DoesNotThrow(() => new NumberValidator(precision, scale, onlyPositive));
+            Assert.DoesNotThrow(() => new NumberValidator(1, 0, true));
         }
 
         [Test]
-        [TestCase(-1, 2, true)]
-        [TestCase(-1, 2, false)]
-        public void NumberValitdatorConstructor_ThrowsArgumentException_WhenNegativeArgs(int precision, int scale, bool onlyPositive)
+        public void NumberValitdatorConstructor_ThrowsArgumentException_WhenNegativePrecision()
         {
-            Assert.Throws<ArgumentException>(() => new NumberValidator(precision, scale, onlyPositive));
+            Assert.Throws<ArgumentException>(() => new NumberValidator(-1, 2));
         }
 
         [Test]
-        [TestCase(17, 2, true, "0,0")]
-        [TestCase(17, 2, true, "0")]
-        [TestCase(4, 2, true, "+1.23")]
+        public void NumberValitdatorConstructor_ThrowsArgumentException_WhenNegativeScale()
+        {
+            Assert.Throws<ArgumentException>(() => new NumberValidator(1, -2));
+        }
+
+
+        [TestCase(17, 2, true, "0,0", TestName = "When separor is comma")]
+        [TestCase(17, 2, true, "0", TestName = "When number is integer")]
+        [TestCase(4, 2, true, "+1.23", TestName = "When only positive")]
+        [TestCase(4, 2, false, "-1.23", TestName = "When not only positive")]
         public void IsValidNumber_ReturnTrue(int precision, int scale, bool onlyPositive, string number)
         {
             Assert.IsTrue(new NumberValidator(precision, scale, onlyPositive).IsValidNumber(number));
         }
 
-        [Test]
-        [TestCase(3, 2, true, "00.00")]
-        [TestCase(3, 2, true, "-0.00")]
-        [TestCase(3, 2, true, "+1.23")]
-        [TestCase(17, 2, true, "0.000")]
-        [TestCase(3, 2, true, "-1.23")]
-        [TestCase(3, 2, true, "a.sd")]
-        public void IsValidNumber_ReturnFalse(int precision, int scale, bool onlyPositive, string number)
+
+        [TestCase(3, 2, "a.sd", TestName = "When Number without Digits")]
+        [TestCase(3, 2, "1:23", TestName = "When separator is not dot or comma")]
+        public void IsValidNumber_ReturnFalse_WhenWrongNumberFormat(int precision, int scale, string number)
         {
-            Assert.IsFalse(new NumberValidator(precision, scale, onlyPositive).IsValidNumber(number));
+            Assert.IsFalse(new NumberValidator(precision, scale, true).IsValidNumber(number));
+        }
+
+        [Test]
+        public void IsValidNumber_ReturnFalse_WhenWrongScale()
+        {
+            Assert.IsFalse(new NumberValidator(17, 2, true).IsValidNumber("0.000"));
+        }
+
+        [TestCase(3, 2, "-0.00", TestName = "With Sign")]
+        [TestCase(3, 2, "00.00", TestName = "Without sign")]
+        public void IsValidNumber_ReturnFalse_WhenWrongPrecision(int precision, int scale, string number)
+        {
+            Assert.IsFalse(new NumberValidator(precision, scale).IsValidNumber(number));
+        }
+
+        [Test]
+        public void IsValidNumber_ReturnFalse_WhenWrongSign()
+        {
+            Assert.IsFalse(new NumberValidator(3, 2, true).IsValidNumber("-0.00"));
+        }
+
+        [TestCase(3, 2, "", TestName = "When Number is empty")]
+        [TestCase(3, 2, null, TestName = "When Number is null")]
+        public void IsValidNumber_ReturnFalse_WhenNumberIsNullOrEmpty(int precision, int scale, string number)
+        {
+            Assert.IsFalse(new NumberValidator(precision, scale, true).IsValidNumber(number));
         }
     }
 
