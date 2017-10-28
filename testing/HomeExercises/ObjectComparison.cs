@@ -28,8 +28,7 @@ namespace HomeExercises
             //Assert.AreEqual(expectedTsar.Parent.Parent, actualTsar.Parent.Parent);
 
             actualTsar.ShouldBeEquivalentTo(expectedTsar, options => options
-                .Excluding(x => x.Id)
-                .Excluding(x => x.Parent.Id));
+                .Excluding(x => x.SelectedMemberInfo.Name.EndsWith("Id")));
 
         }
 
@@ -44,6 +43,15 @@ namespace HomeExercises
             // Какие недостатки у такого подхода? 
             Assert.True(AreEqual(actualTsar, expectedTsar));
 
+            //Недостатки
+            //Необходимо менять метод AreEqual после каждого изменения класса Person (если изменения влияют на сравнение)
+            //Читаемость не очень
+
+            //1.В решении выше после изменения класса Person нет необходимости менять тест
+            //если не добавляется поле/свойство, которое не нужно сравнивать, в плохом случае нужно добавить 
+            //еще один Excluding 
+            //2.Читаемость
+            //3.Пишется меньше кода
         }
 
         private bool AreEqual(Person actual, Person expected)
@@ -86,6 +94,6 @@ namespace HomeExercises
             Weight = weight;
             Parent = parent;
         }
-        
+
     }
 }
